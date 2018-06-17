@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alice In Wonderland Trivia</title>
+    <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs" rel="stylesheet">
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<canvas id="c"></canvas>
+<body>
+    <header>
+        <img src='assets/images/header.png' alt='headerImg' width='100%'>
+    </header>
+    <div class='container'>
+        <button class='btn btn-primary' id='startBtn'>Start Me!</button>
+
+        <!-- Question page -->
+        <div id=timeLeft></div>
+        <div id=currentQuestion></div>
+        <div class='question'></div>
+        <div class='answerList'></div>
+        <!-- Answer Page -->
+        <div id=message></div>
+        <div id=correctedAnswer></div>
+        <div id=gif></div><div id="next" class='btn btn-primary danger'></div>
+        <!-- Scoreboard -->
+        <div id=finalMessage></div>
+        <div id=correctAnswers></div>
+        <div id=incorrectAnswers></div>
+        <div id=unanswered></div>
+        <div id='startOverBtn'></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+   
+    <!-- Starting Modal -->
+ <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center">Curiouser and Curiouser! <strong>Alice</strong> says: </h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">"If you don’t know where you are going any road can take you there."
+
+            
+                </div>
+                 <div class="modal-footer">
+    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                    <button type="button" class="btn btn-primary block-center" data-dismiss="modal">Down the Rabbit Hole!!</button> -->
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <script type="text/javascript"> 
+
+
+  
+
+// $(document).ready(function($) {
+//   $("#startBtn").on("", "a", function(event) {
+//     event.preventDefault();
+//     jQuery.noConflict();
+//     $('#myModal').modal('show');
+
+//   });
+// });
+// $(window).on('load',function(){
+//     $('#myModal').html('show');
+// });
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+
+//making the canvas full screen
+c.height = window.innerHeight;
+c.width = window.innerWidth;
+
+//hearts characters - taken from the unicode charset
+var hearts= "♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️";
+//converting the string into an array of single characters
+hearts = hearts.split("");
+
+var font_size = 25;
+var columns = c.width/font_size; //number of columns for the rain of hearts
+//an array of drops - one per column
+var drops = [];
+//x below is the x coordinate
+//1 = y co-ordinate of the drop(same for every drop initially)
+for(var x = 0; x < columns; x++)
+    drops[x] = 1; 
+
+//drawing the characters
+function draw()
+{
+    //Black BG for the canvas
+    //translucent BG to show trail
+    ctx.fillStyle = "rgba(10, 0, 102, 0.70)";
+    ctx.fillRect(0, 0, c.width, c.height);
+    
+    ctx.fillStyle = "#FF4D39"; //red text
+    ctx.font = font_size + "px arial";
+    //looping over drops
+    for(var i = 0; i < drops.length; i++)
+    {
+        //a random hearts character to print
+        var text = hearts[Math.floor(Math.random()*hearts.length)];
+        //x = i*font_size, y = value of drops[i]*font_size
+        ctx.fillText(text, i*font_size, drops[i]*font_size);
+        
+        //sending the drop back to the top randomly after it has crossed the screen
+        //adding a randomness to the reset to make the drops scattered on the Y axis
+        if(drops[i]*font_size > c.height && Math.random() > 0.575)
+            drops[i] = 0;
+        
+        //incrementing Y coordinate
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 33);
+
+
+
+</script>
+</body>
+
+</html>
 

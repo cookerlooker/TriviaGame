@@ -1,1 +1,69 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Mouse Memoirs', sans-serif;
+
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 30px;
+    color: white;
+  }
+canvas{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:-1;
+  }
+
+/*div{
+    position:absolute;
+    z-index:0;
+    left:12px;
+    top:10px;
+  }*/
+
+header{
+  margin-bottom: 20px;
+
+}
+
+.btn-primary,.reset{
+  background-color: #313477;
+  color: white;
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 30px;
+  padding: 20px;
+  margin-top: 100px;
+}
+.btn-primary:hover, .reset:hover{
+  background-color: #202364;
+}
+
+.container{
+  margin-top: 50px;
+  text-align: center;
+  height: 100%;
+  width: 700px;
+}
+
+h2, #message, #finalMessage{
+  font-family: Mouse Memoirs;
+}
+
+.thisChoice:hover{
+  background-color: #202364;
+  color: white;
+  padding: 10px;
+}
+
+#gif{
+  margin: 30px;
+}
+
+@media screen and (max-width:640px){
+  .container{
+      width: 500px;
+      margin-top: 200px;
+      size: 200%;
+  }	
+}
 
