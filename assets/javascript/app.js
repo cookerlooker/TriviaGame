@@ -1,13 +1,9 @@
-    // STAGE 1: Initial Setup/ Display
+// STAGE 1: Initial Setup/ Display
 // $(document).ready(function() {
-//     reset();
-    // gets the link for the theme song to be played in the background
-     var musicElement = document.createElement('audio');
-     musicElement.autoplay = true;
-     musicElement.loop = true;
-     musicElement.setAttribute('src', 'assets/audio/drinkMe.mp3');
+//musicElement.setAttribute('src', 'assets/audio/drinkMe.mp3');
+//Establish  Trivia Questions and their Boolean values (the answers)
 
-     //Establish  Trivia Questions and their Boolean values (the answers)
+
 
 var triviaQuestions = [{
 	question: "What is the name of Alice's cat?",
@@ -104,10 +100,7 @@ $('#startOverBtn').on('click', function(){
 	newGame();
 });
 
-// $('#next').on('click', function(){
-// 	$(this).hide();
-// 	nextQuestion();
-// });
+
 
 function newGame(){
 	$('#finalMessage').empty();

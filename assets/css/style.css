@@ -14,20 +14,15 @@ canvas{
     z-index:-1;
   }
 
-/*div{
-    position:absolute;
-    z-index:0;
-    left:12px;
-    top:10px;
-  }*/
 
 header{
   margin-bottom: 20px;
+  text-align: center;
 
 }
 
 .btn-primary,.reset{
-  background-color: #313477;
+  background-color: #080302;
   color: white;
   font-family: 'Mouse Memoirs', sans-serif;
   font-size: 30px;
@@ -35,14 +30,15 @@ header{
   margin-top: 100px;
 }
 .btn-primary:hover, .reset:hover{
-  background-color: #202364;
+  background-color: #ff4729;
 }
 
 .container{
-  margin-top: 50px;
+  
   text-align: center;
-  height: 100%;
-  width: 700px;
+  width: 50%;
+  height: 720px;
+  
 }
 
 h2, #message, #finalMessage{
@@ -50,7 +46,7 @@ h2, #message, #finalMessage{
 }
 
 .thisChoice:hover{
-  background-color: #202364;
+  background-color: #ff4729;
   color: white;
   padding: 10px;
 }
