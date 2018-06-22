@@ -8,7 +8,7 @@ The game was created during Week 5 of GT Coding Bootcamp. The challenge was to d
 
  Motivation
 
- To create a trivia game that highlights some interesting was towards the more difficult side and gave Matrix buffs a challenge. The initial app release can be found here:
+ To create a trivia game that highlight many interesting points in the book.
 
  Where to Play the Game: 
 
